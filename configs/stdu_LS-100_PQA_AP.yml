@@ -8,7 +8,7 @@ train:
   num_novel: 40
   num_all: 100
   start_session: 0
-  test_times: 10
+  test_times: 100
   seq_sample: false
   tmp_train: true
   stk: true
