@@ -34,17 +34,18 @@ LibriSpeech is a corpus of approximately 1000 hours of 16kHz read English speech
    ```
    python data/LS100/construct_LS100.py --data_dir DATA_DIR --duration_json data/librispeech/spk_total_duration.json --single_spk_dir SINGLE_SPK_DIR --num_select_spk 100 --spk_segment_dir SPK_SEGMENT_DIR --csv_path CSV_PATH --spk_mapping_path SPK_MAPPING_PATH
    ```
-
-## 
-
+   
 ## Code
 
-pip install -r requirements.txt
-
 ```bash
+pip install -r requirements.txt
+```
+###Training
+```
 python train.py -project stdu -dataroot DATAROOT -dataset librispeech -config ./configs/stdu_LS-100_FCIAC -gpu 0
 python train.py -project stdu -dataroot DATAROOT -dataset nsynth-100 -config ./configs/stdu_nsynth100_FCIAC.yml -gpu 0
 python train.py -project stdu -dataroot DATAROOT -dataset FMC -config ./configs/stdu_fmc89_FCIAC.yml -gpu 0
+```
 
 ## Contact
 
