@@ -6,7 +6,7 @@ To study the Few-shot Class-incremental Audio Classification (FCAC) problem, thr
 choosing samples from audio corpora of the [Librispeech](https://www.openslr.org/12/) dataset, the [NSynth](https://magenta.tensorflow.org/datasets/nsynth) dataset and the [FSD-MIX-CLIPS](https://zenodo.org/record/5574135#.YWyINEbMIWo) dataset respectively.
 In the study of the FCIAC problem, we still use these three datasets.
 
-Wei Xie, one of our team members, constructed the NSynth-100 dataset and FSC-89 dataset. The detailed information of these two datasets is [here](https://github.com/chester-w-xie/FCAC_datasets).
+The detailed information of NSynth-100 dataset and FSC-89 dataset is [here](https://github.com/chester-w-xie/FCAC_datasets).
 
 The detailed information of the LS-100 dataset is given below.
 
@@ -47,8 +47,4 @@ python train.py -project stdu -dataroot DATAROOT -dataset nsynth-100 -config ./c
 python train.py -project stdu -dataroot DATAROOT -dataset FMC -config ./configs/stdu_fmc89_FCIAC.yml -gpu 0
 ```
 
-## Contact
 
-Yanxiong Li (eeyxli@scut.edu.cn) and Guoqing Chen (1695390037@qq.com)
-
-School of Electronic and Information Engineering, South China University of Technology, Guangzhou, China
