@@ -706,7 +706,7 @@ class MYNET(Net):
             self.base_cov_s[c]  = np.cov(cs, rowvar=False) + np.eye(cs.shape[1]) * eps
 
 
-    # ================== 新增：增量阶段重构（教师 & 学生） ==================
+    # ================== 增量阶段重构（教师 & 学生） ==================
     def reconstruct_old_features_dual(self,session, sample_per_class=5):
         """
         返回：
@@ -739,19 +739,7 @@ class MYNET(Net):
         return t_feat_old, s_feat_old, labels_old
 
 
-    # ================== 新增：把旧类（t_old, s_old）也送进 fusion_module 得到融合特征 ==================
-    def fuse_feats_dual(self, t_feat, s_feat):
-        """
-        这里假设 fusion_module(teacher_feat, student_feat) -> 512维融合特征
-        如果你的 fusion_module 接口不是这么用，请按你自己定义的 forward 调整
-        """
-        self.fusion_module.eval()  # 如果需要的话
-        with torch.no_grad():
-            fused = self.fusion_module(t_feat, s_feat)
-        return fused
-
-
-    # ================== 新增：增量阶段也更新统计 ==================
+    # ================== 增量阶段也更新统计 ==================
     def update_statistics_dual(self, new_data, new_labels, lam=0.8, eps=1e-5):
         """
         对当前 session 的新类进行统计，并 EMA 融入已有（如果是旧类也同样 EMA 更新）
@@ -781,7 +769,6 @@ class MYNET(Net):
                 self.base_mean_t[c], self.base_cov_t[c] = mean_t, cov_t
                 self.base_mean_s[c], self.base_cov_s[c] = mean_s, cov_s
 
-# ========新增结束========
         
     def waveform_to_img(self, x):
      """
@@ -878,4 +865,5 @@ class MultiHeadAttention(nn.Module):
 if __name__ == "__main__":
     proto = torch.randn(25, 512, 2, 4)
     query = torch.randn(75, 512, 2, 4)
+
 
