@@ -1,7 +1,7 @@
 import os
 import time
 from copy import deepcopy
-from .PID import get_optimizer_pit,replace_base_fc,v_train_pit_final
+from .PCTS import get_optimizer_pit,replace_base_fc,v_train_pit_final
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -13,7 +13,7 @@ from dataloader.dataloader import get_dataloader, get_dataset_for_data_init, get
 from models.CFIAC.incremental_train_helper import base_train, get_optimizer_incremental
 from models.CFIAC.standard_train_helper import get_optimizer_standard, standard_base_train, standard_test
 from utils.utils import AverageMeter, Averager, DAverageMeter, acc_utils, count_acc, count_per_cls_acc, save_list_to_txt,cd_acc_utils,get_torch_size
-from .CANetwork import MYNET
+from .Network import MYNET
 from .base import Trainer
 from utils.profile_utils import profile_model
 from thop import profile
@@ -557,4 +557,5 @@ class FSCILTrainer(Trainer):
             acc_dict = acc_utils(da, self.args.num_base, self.args.num_session, self.args.way, session)
         print(acc_dict)
         return vl, va, acc_dict
+
     
