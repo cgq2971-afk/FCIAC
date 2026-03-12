@@ -256,23 +256,6 @@ def get_new_dataloader(args, session):
                                                 num_workers=8, pin_memory=True,collate_fn=custom_collate)
     return trainset, valset, trainloader, valloader
 
-def get_session_classes_8(args,  session):
-    if args.tmp_train:
-        num_base_class = args.stdu.num_tmpb
-        num_incre_class = args.stdu.num_tmpi
-    else:
-        num_base_class = args.num_base
-        num_incre_class = 0
-
-    if session <= 8:                  #5\6\7\8session类递减
-        class_list = np.arange(num_base_class + session * args.way)
-    else:
-        class_list = np.arange(num_base_class + (16-session) * args.way)
-
-
-    #class_list = np.arange(num_base_class + session * args.way)
-    return class_list
-
 def get_session_classes(args,  session):
     m=1
     if args.tmp_train:
@@ -384,7 +367,6 @@ def get_val_session_classes(args,  session):
         num_incre_class = 0
     class_list = np.arange(num_base_class + session * args.way)
     return class_list
-
 
 
 
