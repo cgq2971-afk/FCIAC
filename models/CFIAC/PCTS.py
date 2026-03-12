@@ -14,7 +14,7 @@ def _laplacian_from_proto(proto, sigma=0.5):
     D = torch.diag(W.sum(dim=1))
     L = D - W
     return L
-#PGP LOSS
+#PIP LOSS
 def loss_topokd_laplace(proto_pre, proto_cur, sigma=0.5):        
     """
     Laplacian distillation loss  ‖L_old - L_new‖_F² / R²
@@ -23,7 +23,7 @@ def loss_topokd_laplace(proto_pre, proto_cur, sigma=0.5):
     L_new = _laplacian_from_proto(proto_cur, sigma)
     R = proto_pre.size(0)
     return torch.norm(L_old - L_new, p='fro')**2 / (R * R)
-#FS LOSS
+#PSP LOSS
 def loss_fs(proto_forget, proto_retain, m_f=0.5):
     """Forgetting separation: push deleted class away."""
     dmat = torch.cdist(proto_forget, proto_retain, p=2)  # [F,R]
@@ -52,7 +52,7 @@ def avg_by_class(q_proto, way):
     q_proto = q_proto.squeeze(1)          # [Nq, D]
     return q_proto.view(-1, way, q_proto.size(-1)).mean(0)
 
-#PID  training strategy
+#PCTS  training strategy
 def v_train_pit_final(model, trainloader, optimizer, scheduler, epoch, args):  # 伪增减量训练，双 session，每个 batch 内完成
     tl = Averager()
     ta = Averager()
