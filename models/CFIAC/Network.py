@@ -751,7 +751,7 @@ class MYNET(Net):
         return fused
 
 
-    # ================== 新增：增量阶段也更新统计（可选但强烈建议） ==================
+    # ================== 新增：增量阶段也更新统计 ==================
     def update_statistics_dual(self, new_data, new_labels, lam=0.8, eps=1e-5):
         """
         对当前 session 的新类进行统计，并 EMA 融入已有（如果是旧类也同样 EMA 更新）
@@ -878,3 +878,4 @@ class MultiHeadAttention(nn.Module):
 if __name__ == "__main__":
     proto = torch.randn(25, 512, 2, 4)
     query = torch.randn(75, 512, 2, 4)
+
