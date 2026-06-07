@@ -52,10 +52,11 @@ Yanxiong Li (eeyxli@scut.edu.cn) and Guoqing Chen (202421012439@scut.edu.cn) Sch
 
 ## Citation
 Please cite our paper if you find the code and datasets are useful for your research.
-@inproceedings{xxx_2026_INTERSPEECH,
-  title        = {Few-shot Class-variable Incremental Audio Classification via Prototype Adaptation and Pseudo Class-variable Training},
-  author       = {Yanxiong Li, Guoqing Chen, Qianqian Li, and Sen Huang},
-  booktitle    = {Proceedings of Interspeech 2026},
-  year         = {2026},
+@inproceedings{li_2026_INTERSPEECH,
+  title={Few-shot Class-variable Incremental Audio Classification via Prototype Adaptation and Pseudo Class-variable Training},
+  author={Li, Yanxiong and Chen, Guoqing and Li, Qianqian and Huang, Sen},
+  booktitle={Proceedings of Interspeech 2026},
+  year={2026},
+  organization={International Speech Communication Association}
 }
 
