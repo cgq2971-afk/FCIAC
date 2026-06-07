@@ -47,10 +47,10 @@ python train.py -project stdu -dataroot DATAROOT -dataset nsynth-100 -config ./c
 python train.py -project stdu -dataroot DATAROOT -dataset FMC -config ./configs/stdu_fmc89_FCIAC.yml -gpu 0
 ```
 
-### Contact
+## Contact
 Yanxiong Li (eeyxli@scut.edu.cn) and Guoqing Chen (202421012439@scut.edu.cn) School of Electronic and Information Engineering, South China University of Technology, Guangzhou, China
 
-### Citation
+## Citation
 Please cite our paper if you find the code and datasets are useful for your research.
 @inproceedings{xxx_2026_INTERSPEECH,
   title        = {Few-shot Class-variable Incremental Audio Classification via Prototype Adaptation and Pseudo Class-variable Training},
