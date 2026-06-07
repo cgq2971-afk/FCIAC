@@ -1,4 +1,4 @@
-# FCIAC
+# Few-shot Class-variable Incremental Audio Classification via Prototype Adaptation and Pseudo Class-variable Training
  Few-shot Class-adjustable Incremental Audio Classification(FCIAC), which can  handle dynamic scenarios where classes can be both added and removed under few-shot conditions.
 
 ## Datasets
